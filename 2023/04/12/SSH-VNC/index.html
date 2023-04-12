@@ -48,7 +48,7 @@
         content="2023-04-12">
       <meta 
         property="og:article:author" 
-        content="theme-kaze">
+        content="Henry Sky">
       
         
       
@@ -172,7 +172,7 @@
   <div class="navbar-logo">
     <a class="navbar-logo-main" href="/">
       
-      <span class="navbar-logo-dsc">Theme Kaze</span>
+      <span class="navbar-logo-dsc">Henry's Blog</span>
       </a>
   </div>
   <div class="navbar-menu">
@@ -276,7 +276,7 @@
     height="88"
     alt="author avatar">
 
-<p class="author-name">theme-kaze</p>
+<p class="author-name">Henry Sky</p>
 <p class="author-description">designed by theme-kaze</p>
 <div class="author-message">
   <a 
@@ -383,12 +383,12 @@ sudo systemctl is-enabled ssh.service
 <h2 id="安装服务端"><a href="#安装服务端" class="headerlink" title="安装服务端"></a>安装服务端</h2><pre><code>sudo apt install tigervnc-standalone-server
 #安装vncsever
 </code></pre>
-<p>#####基础设置</p>
+<p>####基础设置</p>
 <pre><code>vncserver
 #启动vncsever
 #过程中会让你设置密码和只读密码, 自动分配端口号.
 </code></pre>
-<p>#####启动后</p>
+<p>####启动后</p>
 <pre><code>#查看启动后的实例
 $ vncserver -list
 
@@ -399,7 +399,7 @@ X DISPLAY #	RFB PORT #	RFB UNIX PATH	PROCESS ID #	SERVER
 
 #如果-list看不到实例, 说明启动失败, 需要journalctl -fe看一下具体原因
 </code></pre>
-<p>#####其他操作</p>
+<p>####其他操作</p>
 <pre><code>vncpasswd
 #修改密码
 
@@ -418,9 +418,9 @@ sudo systemctl enable tigervncserver@:2.service
 使用 /usr/libexec/tigervncsession-start 这个脚本
 脚本调用 /usr/sbin/tigervncsession
 </code></pre>
-<p>#####需要在~&#x2F;.vnc&#x2F;下创建文件config</p>
-<p>#####输入内容：<br>    session&#x3D;ubuntu<br>    #如果前面安装了xfce, 这里可以用xfce, 否则需要改成ubuntu(Desktop版自带桌面)<br>    geometry&#x3D;1366x768<br>    #开启时的默认分辨率<br>    securitytypes&#x3D;vncauth,tlsvnc<br>    #如果要只允许本地连接, 可以加一行 localhost</p>
-<p>#####重启服务后生效</p>
+<p>####需要在~&#x2F;.vnc&#x2F;下创建文件config</p>
+<p>####输入内容：<br>    session&#x3D;ubuntu<br>    #如果前面安装了xfce, 这里可以用xfce, 否则需要改成ubuntu(Desktop版自带桌面)<br>    geometry&#x3D;1366x768<br>    #开启时的默认分辨率<br>    securitytypes&#x3D;vncauth,tlsvnc<br>    #如果要只允许本地连接, 可以加一行 localhost</p>
+<p>####重启服务后生效</p>
 <pre><code>sudo systemctl restart tigervncserver@:2.service
 </code></pre>
 <hr>
@@ -443,7 +443,7 @@ sudo systemctl enable tigervncserver@:2.service
             target="_blank" 
             rel="nofollow noopener noreferrer" 
             href="/about">
-            theme-kaze
+            Henry Sky
           </a>
         </p>
         <p>
@@ -469,7 +469,7 @@ sudo systemctl enable tigervncserver@:2.service
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">帮助界面 </div>
+            <div class="nav-title">帮助页面 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -522,7 +522,7 @@ sudo systemctl enable tigervncserver@:2.service
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2023-04-11</div>
-        <a href="/2023/04/11/hello-world/"><div class="recent-posts-item-content">帮助界面</div></a>
+        <a href="/2023/04/11/hello-world/"><div class="recent-posts-item-content">帮助页面</div></a>
       </div>
     
   </div>
@@ -555,7 +555,7 @@ sudo systemctl enable tigervncserver@:2.service
         <a 
           href="/" 
           class="footer-link">
-          Theme Kaze
+          Henry's Blog
         </a>
       </div>
     </div>
