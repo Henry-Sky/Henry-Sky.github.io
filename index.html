@@ -93,12 +93,63 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="准备ssh服务"><a href="#准备ssh服务" class="headerlink" title="准备ssh服务"></a>准备ssh服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openssh-server</span><br><span class="line">sudo systemctl status ssh.service </span><br><span class="line"># 确认是否开机自启动</span><br><span class="line">sudo systemctl is-enabled ssh.service </span><br></pre></td></tr></table></figure>
-<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><pre><code>sudo apt install openssh-server
+        <h2 id="准备ssh服务"><a href="#准备ssh服务" class="headerlink" title="准备ssh服务"></a>准备ssh服务</h2><pre><code>sudo apt install openssh-server
 sudo systemctl status ssh.service 
 # 确认是否开机自启动
-sudo systemctl is-enabled ssh.service 
+sudo systemctl is-enabled ssh.service
 </code></pre>
+<hr>
+<h2 id="安装服务端"><a href="#安装服务端" class="headerlink" title="安装服务端"></a>安装服务端</h2><pre><code>sudo apt install tigervnc-standalone-server
+#安装vncsever
+</code></pre>
+<p>#####基础设置</p>
+<pre><code>vncserver
+#启动vncsever
+#过程中会让你设置密码和只读密码, 自动分配端口号.
+</code></pre>
+<p>#####启动后</p>
+<pre><code>#查看启动后的实例
+$ vncserver -list
+
+TigerVNC server sessions:
+
+X DISPLAY #	RFB PORT #	RFB UNIX PATH	PROCESS ID #	SERVER
+2         	5902      	             	11368       	Xtigervnc
+
+#如果-list看不到实例, 说明启动失败, 需要journalctl -fe看一下具体原因
+</code></pre>
+<p>#####其他操作</p>
+<pre><code>vncpasswd
+#修改密码
+
+vncserver -localhost no
+上面启动的服务, 默认是只监听本地127.0.0.1, 其它机器无法连接, 若需要连接, 可以用上述命令启动
+</code></pre>
+<hr>
+<h2 id="配置和添加系统服务"><a href="#配置和添加系统服务" class="headerlink" title="配置和添加系统服务"></a>配置和添加系统服务</h2><pre><code>vncserver -kill :2
+关闭刚才的实例 :2 根据自己的实例修改
+
+sudo systemctl start tigervncserver@:2.service
+sudo systemctl enable tigervncserver@:2.service
+将 tigervncservice 服务添加到启动, :2根据自己的实例修改
+
+服务配置文件在 /lib/systemd/system/tigervncserver@.service
+使用 /usr/libexec/tigervncsession-start 这个脚本
+脚本调用 /usr/sbin/tigervncsession
+</code></pre>
+<p>#####需要在~&#x2F;.vnc&#x2F;下创建文件config</p>
+<p>#####输入内容：<br>    session&#x3D;ubuntu<br>    #如果前面安装了xfce, 这里可以用xfce, 否则需要改成ubuntu(Desktop版自带桌面)<br>    geometry&#x3D;1366x768<br>    #开启时的默认分辨率<br>    securitytypes&#x3D;vncauth,tlsvnc<br>    #如果要只允许本地连接, 可以加一行 localhost</p>
+<p>#####重启服务后生效</p>
+<pre><code>sudo systemctl restart tigervncserver@:2.service
+</code></pre>
+<hr>
+<p>参考目录：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.howtoforge.com/how-to-install-vnc-server-ubuntu-22-04/">https://www.howtoforge.com/how-to-install-vnc-server-ubuntu-22-04/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.linuxbuzz.com/install-configure-vnc-ubuntu-server/">https://www.linuxbuzz.com/install-configure-vnc-ubuntu-server/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-22-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-22-04</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/milton/p/16730512.html">https://www.cnblogs.com/milton/p/16730512.html</a></li>
+</ul>
 
       
     </div>
