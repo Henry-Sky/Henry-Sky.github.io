@@ -93,8 +93,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="准备ssh服务"><a href="#准备ssh服务" class="headerlink" title="准备ssh服务"></a>准备ssh服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openssh-server  </span><br></pre></td></tr></table></figure>
-
+        <h2 id="准备ssh服务"><a href="#准备ssh服务" class="headerlink" title="准备ssh服务"></a>准备ssh服务</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openssh-server</span><br><span class="line">sudo systemctl status ssh.service </span><br><span class="line"># 确认是否开机自启动</span><br><span class="line">sudo systemctl is-enabled ssh.service </span><br></pre></td></tr></table></figure>
+<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><pre><code>sudo apt install openssh-server
+sudo systemctl status ssh.service 
+# 确认是否开机自启动
+sudo systemctl is-enabled ssh.service 
+</code></pre>
 
       
     </div>
