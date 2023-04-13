@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/">
-  <title>远程桌面(VNC)</title>
+  <title>ubuntu-netplan</title>
   
     
       <meta 
         property="og:title" 
-        content="远程桌面(VNC)">
+        content="ubuntu-netplan">
     
     
       <meta 
         property="og:url" 
-        content="https://henry-sky.github.io/2023/04/12/SSH-VNC/index.html">
+        content="https://henry-sky.github.io/2023/04/13/ubuntu-netplan/index.html">
     
     
       <meta 
@@ -42,7 +42,7 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2023-04-12">
+        content="2023-04-13">
       <meta 
         property="og:article:modified_time" 
         content="2023-04-13">
@@ -53,7 +53,7 @@
         
           <meta 
             property="og:article:tag" 
-            content="ssh">
+            content="Linux">
         
       
     
@@ -299,7 +299,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87ssh%E6%9C%8D%E5%8A%A1"><span class="toc-text">准备ssh服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">安装服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%92%8C%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="toc-text">配置和添加系统服务</span></a></li></ol>
+
       </div>
     </article>
   
@@ -372,16 +372,16 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      远程桌面(VNC)
+      ubuntu-netplan
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2023-04-12T03:16:10.220Z">
+    <time datetime="2023-04-13T12:16:44.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2023-04-12</span>
+      <span>2023-04-13</span>
     </time>
     
       <span class="dot"></span>
@@ -395,7 +395,7 @@
     
     
       <span class="dot"></span>
-      <span>407 字</span>
+      <span>95 字</span>
     
   </div>
   
@@ -410,9 +410,9 @@
         
           
           <a 
-            href="/tags/ssh/" 
+            href="/tags/Linux/" 
             class="post-meta-link">
-            ssh
+            Linux
           </a>
         
       </div>
@@ -422,67 +422,38 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="准备ssh服务"><a href="#准备ssh服务" class="headerlink" title="准备ssh服务"></a>准备ssh服务</h2><pre><code>sudo apt install openssh-server
-sudo systemctl status ssh.service 
-# 确认是否开机自启动
-sudo systemctl is-enabled ssh.service
+    <p>##树莓派Ubuntu-Server 22.04配置无线网络</p>
+<p>进入目录netplan</p>
+<pre><code>$ cd /etc/netplan
+$ sudo vi 50-cloud-init.yaml
 </code></pre>
-<h2 id="安装服务端"><a href="#安装服务端" class="headerlink" title="安装服务端"></a>安装服务端</h2><pre><code>sudo apt install tigervnc-standalone-server
-#安装vncsever
+<p>修改配置文件</p>
+<pre><code>network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            optional: true
+    version: 2
+    wifis:
+        wlan0:
+            optional: true
+            access-points:
+                &quot;WifiName&quot;:
+                    password: &quot;WifiPass&quot;
+        dhcp4: true
+#注意代码缩进
 </code></pre>
-<p>基础设置</p>
-<pre><code>vncserver
-#启动vncsever
-#过程中会让你设置密码和只读密码, 自动分配端口号.
+<p>验证修改配置</p>
+<pre><code>$ sudo netplan -debug try
+$ sudo netplan -debug generate
+$ sudo netplan -debug apply
 </code></pre>
-<p>启动后</p>
-<pre><code>#查看启动后的实例
-$ vncserver -list
-
-TigerVNC server sessions:
-
-X DISPLAY #	RFB PORT #	RFB UNIX PATH	PROCESS ID #	SERVER
-2         	5902      	             	11368       	Xtigervnc
-
-#如果-list看不到实例, 说明启动失败, 需要journalctl -fe看一下具体原因
+<p>重启树莓派</p>
+<pre><code>$ sudo reboot
 </code></pre>
-<p>其他操作</p>
-<pre><code>vncpasswd
-#修改密码
-
-vncserver -localhost no
-上面启动的服务, 默认是只监听本地127.0.0.1, 其它机器无法连接, 若需要连接, 可以用上述命令启动
+<p>查看连接网络</p>
+<pre><code>$ifconfig
 </code></pre>
-<h2 id="配置和添加系统服务"><a href="#配置和添加系统服务" class="headerlink" title="配置和添加系统服务"></a>配置和添加系统服务</h2><pre><code>vncserver -kill :2
-关闭刚才的实例 :2 根据自己的实例修改
-
-sudo systemctl start tigervncserver@:2.service
-sudo systemctl enable tigervncserver@:2.service
-将 tigervncservice 服务添加到启动, :2根据自己的实例修改
-
-服务配置文件在 /lib/systemd/system/tigervncserver@.service
-使用 /usr/libexec/tigervncsession-start 这个脚本
-脚本调用 /usr/sbin/tigervncsession
-</code></pre>
-<p>需要在~&#x2F;.vnc&#x2F;下创建文件config<br>输入内容：</p>
-<pre><code>session=ubuntu
-#如果前面安装了xfce, 这里可以用xfce, 否则需要改成ubuntu(Desktop版自带桌面)
-geometry=1366x768
-#开启时的默认分辨率
-securitytypes=vncauth,tlsvnc
-#如果要只允许本地连接, 可以加一行 localhost
-</code></pre>
-<p>重启服务后生效</p>
-<pre><code>sudo systemctl restart tigervncserver@:2.service
-</code></pre>
-<hr>
-<p>参考目录：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.howtoforge.com/how-to-install-vnc-server-ubuntu-22-04/">https://www.howtoforge.com/how-to-install-vnc-server-ubuntu-22-04/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.linuxbuzz.com/install-configure-vnc-ubuntu-server/">https://www.linuxbuzz.com/install-configure-vnc-ubuntu-server/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-22-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-22-04</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/milton/p/16730512.html">https://www.cnblogs.com/milton/p/16730512.html</a></li>
-</ul>
 
   </div>
   <div>
@@ -491,29 +462,15 @@ securitytypes=vncauth,tlsvnc
 </article>
 <div class="nav">
   
-    <div class="nav-item-prev">
-      <a 
-        href="/2023/04/13/NN0413/" 
-        class="nav-link">
-        <i class="iconfont icon-left nav-prev-icon"></i>
-        <div>
-          <div class="nav-label">上一篇</div>
-          
-            <div class="nav-title">搭建神经网络 </div>
-          
-        </div>
-      </a>
-    </div>
-  
   
     <div class="nav-item-next">
       <a 
-        href="/2023/04/11/hello-world/" 
+        href="/2023/04/13/NN0413/" 
         class="nav-link">
         <div>
           <div class="nav-label">下一篇</div>
           
-            <div class="nav-title">帮助页面 </div>
+            <div class="nav-title">搭建神经网络 </div>
           
         </div>
         <i class="iconfont icon-right nav-next-icon"></i>
@@ -531,7 +488,7 @@ securitytypes=vncauth,tlsvnc
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87ssh%E6%9C%8D%E5%8A%A1"><span class="toc-text">准备ssh服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">安装服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%92%8C%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="toc-text">配置和添加系统服务</span></a></li></ol>
+
 </div>
             </main>
             <aside class="right-column">
@@ -545,7 +502,7 @@ securitytypes=vncauth,tlsvnc
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87ssh%E6%9C%8D%E5%8A%A1"><span class="toc-text">准备ssh服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">安装服务端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%92%8C%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="toc-text">配置和添加系统服务</span></a></li></ol>
+
     </article>
   
   
