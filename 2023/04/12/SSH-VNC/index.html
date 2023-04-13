@@ -45,7 +45,7 @@
         content="2023-04-12">
       <meta 
         property="og:article:modified_time" 
-        content="2023-04-12">
+        content="2023-04-13">
       <meta 
         property="og:article:author" 
         content="Henry Sky">
@@ -210,14 +210,6 @@
       </a>
     
       <a 
-        href="/about" 
-        class="navbar-menu-item">
-        
-          关于
-        
-      </a>
-    
-      <a 
         href="/links" 
         class="navbar-menu-item">
         
@@ -282,19 +274,19 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>2</span>
+    <span>3</span>
     <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>0</span>
+    <span>1</span>
     <span>分类</span>
   </a>
   <a 
     class="author-tags-count" 
     href="/tags">
-    <span>0</span>
+    <span>1</span>
     <span>标签</span>
   </a>
 </div>
@@ -552,6 +544,13 @@
   </div>
   <div class="categories-list">
     
+      <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+        <div class="categories-list-item">
+          神经网络
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
   </div>
 </div>
   </article>
@@ -565,6 +564,12 @@
     </i>热门标签
   </div>
   <div class="tags-list">
+    
+      <a 
+        href="/tags/pytorch/" 
+        title="pytorch">
+        <div class="tags-list-item">pytorch</div>
+      </a>
     
   </div>
 </div>
@@ -605,7 +610,6 @@ sudo systemctl status ssh.service
 # 确认是否开机自启动
 sudo systemctl is-enabled ssh.service
 </code></pre>
-<hr>
 <h2 id="安装服务端"><a href="#安装服务端" class="headerlink" title="安装服务端"></a>安装服务端</h2><pre><code>sudo apt install tigervnc-standalone-server
 #安装vncsever
 </code></pre>
@@ -632,7 +636,6 @@ X DISPLAY #	RFB PORT #	RFB UNIX PATH	PROCESS ID #	SERVER
 vncserver -localhost no
 上面启动的服务, 默认是只监听本地127.0.0.1, 其它机器无法连接, 若需要连接, 可以用上述命令启动
 </code></pre>
-<hr>
 <h2 id="配置和添加系统服务"><a href="#配置和添加系统服务" class="headerlink" title="配置和添加系统服务"></a>配置和添加系统服务</h2><pre><code>vncserver -kill :2
 关闭刚才的实例 :2 根据自己的实例修改
 
@@ -670,6 +673,20 @@ securitytypes=vncauth,tlsvnc
   </div>
 </article>
 <div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2023/04/13/NN0413/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">上一篇</div>
+          
+            <div class="nav-title">搭建神经网络 </div>
+          
+        </div>
+      </a>
+    </div>
   
   
     <div class="nav-item-next">
@@ -724,6 +741,11 @@ securitytypes=vncauth,tlsvnc
     </i>最近文章
   </div>
   <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-04-13</div>
+        <a href="/2023/04/13/NN0413/"><div class="recent-posts-item-content">搭建神经网络</div></a>
+      </div>
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2023-04-12</div>
