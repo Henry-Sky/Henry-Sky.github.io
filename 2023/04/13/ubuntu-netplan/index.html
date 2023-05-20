@@ -28,7 +28,7 @@
     
       <meta 
         property="og:url" 
-        content="https://henry-sky.github.io/2023/04/13/ubuntu-netplan/index.html">
+        content="https://henry-sky.github.io/2023/04/13/Ubuntu-netplan/index.html">
     
     
       <meta 
@@ -270,13 +270,13 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>6</span>
+    <span>5</span>
     <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
-    <span>3</span>
+    <span>1</span>
     <span>分类</span>
   </a>
   <a 
@@ -299,7 +299,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AELinux%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">命令行配置Linux无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu-Server-22-04%E9%85%8D%E7%BD%AE%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">Ubuntu-Server 22.04配置无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="toc-text">参考目录：</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AELinux%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">命令行配置Linux无线网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu-Server-22-04%E9%85%8D%E7%BD%AE%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">Ubuntu-Server 22.04配置无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BF%9B%E5%85%A5%E7%9B%AE%E5%BD%95netplan"><span class="toc-text">1.进入目录netplan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-%E5%BB%BA%E8%AE%AE%E5%85%88%E5%A4%87%E4%BB%BD"><span class="toc-text">2.修改配置文件(建议先备份)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BA%94%E7%94%A8%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE"><span class="toc-text">3.应用修改配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%AA%8C%E8%AF%81%E4%BF%AE%E6%94%B9"><span class="toc-text">4.验证修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="toc-text">参考目录：</span></a></li></ol></li></ol></li></ol>
       </div>
     </article>
   
@@ -314,24 +314,10 @@
   </div>
   <div class="categories-list">
     
-      <a href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">
-        <div class="categories-list-item">
-          树莓派
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
       <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
         <div class="categories-list-item">
           操作系统
-          <span class="categories-list-item-badge">3</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-        <div class="categories-list-item">
-          神经网络
-          <span class="categories-list-item-badge">1</span>
+          <span class="categories-list-item-badge">4</span>
         </div>
       </a>
     
@@ -436,13 +422,11 @@
     id="section" 
     class="post-content">
     <h1 id="命令行配置Linux无线网络"><a href="#命令行配置Linux无线网络" class="headerlink" title="命令行配置Linux无线网络"></a>命令行配置Linux无线网络</h1><hr>
-<h2 id="Ubuntu-Server-22-04配置无线网络"><a href="#Ubuntu-Server-22-04配置无线网络" class="headerlink" title="Ubuntu-Server 22.04配置无线网络"></a>Ubuntu-Server 22.04配置无线网络</h2><p>工具：Netplan （一个在某些 Linux 发行版上配置网络连接的命令行工具）</p>
-<p>1.进入目录netplan</p>
-<pre><code>$ cd /etc/netplan
+<h1 id="Ubuntu-Server-22-04配置无线网络"><a href="#Ubuntu-Server-22-04配置无线网络" class="headerlink" title="Ubuntu-Server 22.04配置无线网络"></a>Ubuntu-Server 22.04配置无线网络</h1><p>工具：Netplan （一个在某些 Linux 发行版上配置网络连接的命令行工具）</p>
+<h2 id="1-进入目录netplan"><a href="#1-进入目录netplan" class="headerlink" title="1.进入目录netplan"></a>1.进入目录netplan</h2><pre><code>$ cd /etc/netplan
 $ sudo vi 50-cloud-init.yaml
 </code></pre>
-<p>2.修改配置文件(建议先备份)</p>
-<pre><code>network:
+<h2 id="2-修改配置文件-建议先备份"><a href="#2-修改配置文件-建议先备份" class="headerlink" title="2.修改配置文件(建议先备份)"></a>2.修改配置文件(建议先备份)</h2><pre><code>network:
     ethernets:
         eth0:
             dhcp4: true
@@ -457,16 +441,14 @@ $ sudo vi 50-cloud-init.yaml
         dhcp4: true
 #注意代码缩进
 </code></pre>
-<p>3.应用修改配置</p>
-<pre><code>$ sudo netplan -debug try
+<h2 id="3-应用修改配置"><a href="#3-应用修改配置" class="headerlink" title="3.应用修改配置"></a>3.应用修改配置</h2><pre><code>$ sudo netplan -debug try
 #检验
 $ sudo netplan -debug generate
 #构建
 $ sudo netplan -debug apply
 #应用
 </code></pre>
-<p>4.验证修改</p>
-<pre><code>$ sudo reboot
+<h2 id="4-验证修改"><a href="#4-验证修改" class="headerlink" title="4.验证修改"></a>4.验证修改</h2><pre><code>$ sudo reboot
 #重启
 $ifconfig
 #查看连接网络
@@ -523,7 +505,7 @@ $ifconfig
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AELinux%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">命令行配置Linux无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu-Server-22-04%E9%85%8D%E7%BD%AE%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">Ubuntu-Server 22.04配置无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="toc-text">参考目录：</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AELinux%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">命令行配置Linux无线网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu-Server-22-04%E9%85%8D%E7%BD%AE%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">Ubuntu-Server 22.04配置无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BF%9B%E5%85%A5%E7%9B%AE%E5%BD%95netplan"><span class="toc-text">1.进入目录netplan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-%E5%BB%BA%E8%AE%AE%E5%85%88%E5%A4%87%E4%BB%BD"><span class="toc-text">2.修改配置文件(建议先备份)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BA%94%E7%94%A8%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE"><span class="toc-text">3.应用修改配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%AA%8C%E8%AF%81%E4%BF%AE%E6%94%B9"><span class="toc-text">4.验证修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="toc-text">参考目录：</span></a></li></ol></li></ol></li></ol>
 </div>
             </main>
             <aside class="right-column">
@@ -537,7 +519,7 @@ $ifconfig
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AELinux%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">命令行配置Linux无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu-Server-22-04%E9%85%8D%E7%BD%AE%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">Ubuntu-Server 22.04配置无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="toc-text">参考目录：</span></a></li></ol></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%85%8D%E7%BD%AELinux%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">命令行配置Linux无线网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu-Server-22-04%E9%85%8D%E7%BD%AE%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C"><span class="toc-text">Ubuntu-Server 22.04配置无线网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BF%9B%E5%85%A5%E7%9B%AE%E5%BD%95netplan"><span class="toc-text">1.进入目录netplan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-%E5%BB%BA%E8%AE%AE%E5%85%88%E5%A4%87%E4%BB%BD"><span class="toc-text">2.修改配置文件(建议先备份)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BA%94%E7%94%A8%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE"><span class="toc-text">3.应用修改配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%AA%8C%E8%AF%81%E4%BF%AE%E6%94%B9"><span class="toc-text">4.验证修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="toc-text">参考目录：</span></a></li></ol></li></ol></li></ol>
     </article>
   
   
@@ -552,11 +534,6 @@ $ifconfig
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2023-04-21</div>
-        <a href="/2023/04/21/nn-full/"><div class="recent-posts-item-content">搭建完整神经网络</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2023-04-15</div>
         <a href="/2023/04/15/Vi-OP/"><div class="recent-posts-item-content">Vi操作方式</div></a>
       </div>
@@ -568,7 +545,12 @@ $ifconfig
     
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2023-04-13</div>
-        <a href="/2023/04/13/ubuntu-netplan/"><div class="recent-posts-item-content">无线网络配置(Linux)</div></a>
+        <a href="/2023/04/13/Ubuntu-netplan/"><div class="recent-posts-item-content">无线网络配置(Linux)</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-04-12</div>
+        <a href="/2023/04/12/SSH-VNC/"><div class="recent-posts-item-content">远程桌面(VNC)</div></a>
       </div>
     
   </div>
