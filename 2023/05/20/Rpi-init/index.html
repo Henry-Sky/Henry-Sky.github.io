@@ -18,17 +18,17 @@
   <link 
     rel="icon" 
     href="/">
-  <title>帮助页面</title>
+  <title>树莓派初始化</title>
   
     
       <meta 
         property="og:title" 
-        content="帮助页面">
+        content="树莓派初始化">
     
     
       <meta 
         property="og:url" 
-        content="https://henry-sky.github.io/2023/04/11/hello-world/index.html">
+        content="https://henry-sky.github.io/2023/05/20/Rpi-init/index.html">
     
     
       <meta 
@@ -42,14 +42,22 @@
         content="article">
       <meta 
         property="og:article:published_time" 
-        content="2023-04-11">
+        content="2023-05-20">
       <meta 
         property="og:article:modified_time" 
-        content="2023-04-15">
+        content="2023-05-26">
       <meta 
         property="og:article:author" 
         content="Henry Sky">
       
+        
+          <meta 
+            property="og:article:tag" 
+            content="ssh">
+        
+          <meta 
+            property="og:article:tag" 
+            content="vnc">
         
       
     
@@ -295,7 +303,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B8%96%E5%AD%90"><span class="toc-text">创建帖子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">启动服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6"><span class="toc-text">生成文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E7%AB%99%E7%82%B9"><span class="toc-text">部署到站点</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8D%E7%94%A8%E6%98%BE%E7%A4%BA%E5%99%A8-%E7%BD%91%E7%BA%BF%E9%85%8D%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-text">不用显示器,网线配置树莓派</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%B7%E5%86%99Ubuntu-Server%E9%95%9C%E5%83%8F"><span class="toc-text">1.刷写Ubuntu Server镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%83%A7%E5%BD%95%E8%BD%AF%E4%BB%B6-Raspberry-Pi-OS"><span class="toc-text">(1)烧录软件: Raspberry Pi OS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E7%83%A7%E5%BD%95%E9%95%9C%E5%83%8F%E5%92%8C%E5%AD%98%E5%82%A8%E5%8D%A1-%E5%9C%A8other-os%E9%87%8C%E9%80%89%E6%8B%A9Ubuntu-22-04-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%B8%BA%E4%BE%8B"><span class="toc-text">(2)选择烧录镜像和存储卡(在other os里选择Ubuntu 22.04 服务端为例)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-text">2.网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-text">(1)用ssh连接树莓派</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEWiFi"><span class="toc-text">(2)配置WiFi</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="toc-text">3.配置远程桌面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-text">(1)安装桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="toc-text">(2)安装远程桌面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol></li></ol>
       </div>
     </article>
   
@@ -392,42 +400,101 @@
 <article class="card card-content">
   <header>
     <h1 class="post-title">
-      帮助页面
+      树莓派初始化
     </h1>
   </header>
   <div class="post-meta post-show-meta">
-    <time datetime="2023-04-11T09:59:57.483Z">
+    <time datetime="2023-05-20T06:25:23.000Z">
       <i 
         class="iconfont icon-calendar" 
         style="margin-right: 2px;">
       </i>
-      <span>2023-04-11</span>
+      <span>2023-05-20</span>
     </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" 
+          class="post-meta-link">
+          树莓派
+        </a>
+      
     
     
       <span class="dot"></span>
-      <span>96 字</span>
+      <span>411 字</span>
     
   </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/ssh/" 
+            class="post-meta-link">
+            ssh
+          </a>
+        
+          
+            <span class="dot"></span>
+          
+          <a 
+            href="/tags/vnc/" 
+            class="post-meta-link">
+            vnc
+          </a>
+        
+      </div>
+    </div>
   
   </header>
   <div 
     id="section" 
     class="post-content">
-    <p>欢迎来到 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>!<br>检查 <a target="_blank" rel="noopener" href="https://hexo.io/docs/">文档</a> 获取更多信息，如果在使用Hexo时遇到问题，你可以在 <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a>找到答案，或者你可以咨询 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建帖子"><a href="#创建帖子" class="headerlink" title="创建帖子"></a>创建帖子</h3><pre class="highlight"><span class="line">$ hexo new <span class="string">&quot;Post Name&quot;</span></span><br></pre>
-
-<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><pre class="highlight"><span class="line">$ hexo server</span><br></pre>
-
-<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="生成文件"><a href="#生成文件" class="headerlink" title="生成文件"></a>生成文件</h3><pre class="highlight"><span class="line">$ hexo generate</span><br></pre>
-
-<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="部署到站点"><a href="#部署到站点" class="headerlink" title="部署到站点"></a>部署到站点</h3><pre class="highlight"><span class="line">$ hexo deploy</span><br></pre>
-
-<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+    <h1 id="不用显示器-网线配置树莓派"><a href="#不用显示器-网线配置树莓派" class="headerlink" title="不用显示器,网线配置树莓派"></a>不用显示器,网线配置树莓派</h1><hr>
+<p>树莓派主打的就是一个轻巧，连显示器太费劲，故利用vnc远程桌面控制。先用树莓派官方刷机工具设置好ssh和wifi，在ssh上树莓派进行桌面配置。</p>
+<h2 id="1-刷写Ubuntu-Server镜像"><a href="#1-刷写Ubuntu-Server镜像" class="headerlink" title="1.刷写Ubuntu Server镜像"></a>1.刷写Ubuntu Server镜像</h2><h3 id="1-烧录软件-Raspberry-Pi-OS"><a href="#1-烧录软件-Raspberry-Pi-OS" class="headerlink" title="(1)烧录软件: Raspberry Pi OS"></a>(1)烧录软件: <a target="_blank" rel="noopener" href="https://www.raspberrypi.com/software/">Raspberry Pi OS</a></h3><p><img src="/2023/05/20/Rpi-init/%E7%83%A7%E5%BD%95%E5%87%86%E5%A4%87.jpg" alt="img" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/05/20/Rpi-init/%E7%83%A7%E5%BD%95%E5%87%86%E5%A4%87.jpg" class="lozad post-image"><br>若烧录完成后无法正常识别,请核对镜像版本(树莓派为aarch64架构,区别于其它amd64,mac等),或更换tf卡(可能tf卡能够正常读写文件,但不能作系统引导盘)</p>
+<h3 id="2-选择烧录镜像和存储卡-在other-os里选择Ubuntu-22-04-服务端为例"><a href="#2-选择烧录镜像和存储卡-在other-os里选择Ubuntu-22-04-服务端为例" class="headerlink" title="(2)选择烧录镜像和存储卡(在other os里选择Ubuntu 22.04 服务端为例)"></a>(2)选择烧录镜像和存储卡(在other os里选择Ubuntu 22.04 服务端为例)</h3><p><img src="/2023/05/20/Rpi-init/UbuntuServer.png" alt="img" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/05/20/Rpi-init/UbuntuServer.png" class="lozad post-image"><br>选择烧录系统为2204的服务端后，点击界面右下角出现的设置按钮<br><img src="/2023/05/20/Rpi-init/Setwifi.png" alt="img" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/05/20/Rpi-init/Setwifi.png" class="lozad post-image"><br>开启ssh选项，设置用户名，密码等，配置好预连接网络，本次用手机热点设置</p>
+<h2 id="2-网络配置"><a href="#2-网络配置" class="headerlink" title="2.网络配置"></a>2.网络配置</h2><h3 id="1-用ssh连接树莓派"><a href="#1-用ssh连接树莓派" class="headerlink" title="(1)用ssh连接树莓派"></a>(1)用ssh连接树莓派</h3><p>打开手机热点，开启树莓派，树莓派会自动连接预设置好的手机热点，手机上查看树莓派ip地址<br><img src="/2023/05/20/Rpi-init/Phone.png" alt="img" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/05/20/Rpi-init/Phone.png" class="lozad post-image"><br>将电脑连至同一热点，用ssh连接树莓派<br>ssh工具下载:<a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/download-home-edition.html">Mobaxterm</a>  </p>
+<h3 id="2-配置WiFi"><a href="#2-配置WiFi" class="headerlink" title="(2)配置WiFi"></a>(2)配置WiFi</h3><p>如下代码配置：</p>
+<pre><code>cd /etc/netplan
+#进入netplan配置目录
+sudo vi 50-cloud-init.yaml
+#修改配置文件
+</code></pre>
+<p><img src="/2023/05/20/Rpi-init/Setyaml.png" alt="img" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/05/20/Rpi-init/Setyaml.png" class="lozad post-image">  </p>
+<pre><code>network:
+version: 2
+wifis:
+    renderer: networkd
+    wlan0:
+        access-points:
+            &quot;yourwifiname&quot;:
+                password: &quot;yourpassword&quot;
+        dhcp4: no
+        optional: true
+        addresses: [yourip/24]
+        routes:
+          - to: default
+            via: 192.168.1.1
+        nameservers:
+          addresses: [192.168.1.1]
+</code></pre>
+<p>配置完yaml文件后，应用配置：</p>
+<pre><code>sudo netplan try
+sudo netplan apply
+</code></pre>
+<h2 id="3-配置远程桌面"><a href="#3-配置远程桌面" class="headerlink" title="3.配置远程桌面"></a>3.配置远程桌面</h2><h3 id="1-安装桌面环境"><a href="#1-安装桌面环境" class="headerlink" title="(1)安装桌面环境"></a>(1)安装桌面环境</h3><pre><code>sudo apt install xfce4 xfce4-goodies
+</code></pre>
+<h3 id="2-安装远程桌面"><a href="#2-安装远程桌面" class="headerlink" title="(2)安装远程桌面"></a>(2)安装远程桌面</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
   </div>
   <div>
     
@@ -437,18 +504,32 @@
   
     <div class="nav-item-prev">
       <a 
-        href="/2023/04/12/SSH-VNC/" 
+        href="/2023/05/26/op-test/" 
         class="nav-link">
         <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
           <div class="nav-label">上一篇</div>
           
-            <div class="nav-title">远程桌面(VNC) </div>
+            <div class="nav-title">操作系统复习 </div>
           
         </div>
       </a>
     </div>
   
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2023/04/15/Vi-OP/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">Vi操作方式 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
   
 </div>
 
@@ -461,7 +542,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B8%96%E5%AD%90"><span class="toc-text">创建帖子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">启动服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6"><span class="toc-text">生成文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E7%AB%99%E7%82%B9"><span class="toc-text">部署到站点</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8D%E7%94%A8%E6%98%BE%E7%A4%BA%E5%99%A8-%E7%BD%91%E7%BA%BF%E9%85%8D%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-text">不用显示器,网线配置树莓派</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%B7%E5%86%99Ubuntu-Server%E9%95%9C%E5%83%8F"><span class="toc-text">1.刷写Ubuntu Server镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%83%A7%E5%BD%95%E8%BD%AF%E4%BB%B6-Raspberry-Pi-OS"><span class="toc-text">(1)烧录软件: Raspberry Pi OS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E7%83%A7%E5%BD%95%E9%95%9C%E5%83%8F%E5%92%8C%E5%AD%98%E5%82%A8%E5%8D%A1-%E5%9C%A8other-os%E9%87%8C%E9%80%89%E6%8B%A9Ubuntu-22-04-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%B8%BA%E4%BE%8B"><span class="toc-text">(2)选择烧录镜像和存储卡(在other os里选择Ubuntu 22.04 服务端为例)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-text">2.网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-text">(1)用ssh连接树莓派</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEWiFi"><span class="toc-text">(2)配置WiFi</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="toc-text">3.配置远程桌面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-text">(1)安装桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="toc-text">(2)安装远程桌面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol></li></ol>
 </div>
             </main>
             <aside class="right-column">
@@ -475,7 +556,7 @@
     style="padding-right: 2px;">
   </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B8%96%E5%AD%90"><span class="toc-text">创建帖子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">启动服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6"><span class="toc-text">生成文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E7%AB%99%E7%82%B9"><span class="toc-text">部署到站点</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8D%E7%94%A8%E6%98%BE%E7%A4%BA%E5%99%A8-%E7%BD%91%E7%BA%BF%E9%85%8D%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-text">不用显示器,网线配置树莓派</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%B7%E5%86%99Ubuntu-Server%E9%95%9C%E5%83%8F"><span class="toc-text">1.刷写Ubuntu Server镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%83%A7%E5%BD%95%E8%BD%AF%E4%BB%B6-Raspberry-Pi-OS"><span class="toc-text">(1)烧录软件: Raspberry Pi OS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%89%E6%8B%A9%E7%83%A7%E5%BD%95%E9%95%9C%E5%83%8F%E5%92%8C%E5%AD%98%E5%82%A8%E5%8D%A1-%E5%9C%A8other-os%E9%87%8C%E9%80%89%E6%8B%A9Ubuntu-22-04-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%B8%BA%E4%BE%8B"><span class="toc-text">(2)选择烧录镜像和存储卡(在other os里选择Ubuntu 22.04 服务端为例)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-text">2.网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-text">(1)用ssh连接树莓派</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEWiFi"><span class="toc-text">(2)配置WiFi</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="toc-text">3.配置远程桌面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="toc-text">(1)安装桌面环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2"><span class="toc-text">(2)安装远程桌面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol></li></ol>
     </article>
   
   
