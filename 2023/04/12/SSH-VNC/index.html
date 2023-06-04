@@ -45,7 +45,7 @@
         content="2023-04-12">
       <meta 
         property="og:article:modified_time" 
-        content="2023-05-26">
+        content="2023-06-04">
       <meta 
         property="og:article:author" 
         content="Henry Sky">
@@ -270,7 +270,7 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>8</span>
+    <span>7</span>
     <span>文章</span>
   </a>
   <a 
@@ -317,7 +317,7 @@
       <a href="/categories/%E7%BD%91%E7%BB%9C/">
         <div class="categories-list-item">
           网络
-          <span class="categories-list-item-badge">3</span>
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -357,12 +357,6 @@
   <div class="tags-list">
     
       <a 
-        href="/tags/Linux/" 
-        title="Linux">
-        <div class="tags-list-item">Linux</div>
-      </a>
-    
-      <a 
         href="/tags/test/" 
         title="test">
         <div class="tags-list-item">test</div>
@@ -378,6 +372,12 @@
         href="/tags/Win/" 
         title="Win">
         <div class="tags-list-item">Win</div>
+      </a>
+    
+      <a 
+        href="/tags/Linux/" 
+        title="Linux">
+        <div class="tags-list-item">Linux</div>
       </a>
     
       <a 
@@ -439,7 +439,7 @@
     
     
       <span class="dot"></span>
-      <span>567 字</span>
+      <span>563 字</span>
     
   </div>
   
@@ -505,9 +505,9 @@ sudo systemctl start tigervncserver@:2.service
 sudo systemctl enable tigervncserver@:2.service
 将 tigervncservice 服务添加到启动, :2根据自己的实例修改
 
-服务配置文件在 /lib/systemd/system/tigervncserver@.service
-使用 /usr/libexec/tigervncsession-start 这个脚本
-脚本调用 /usr/sbin/tigervncsession
+#服务配置文件在 /lib/systemd/system/tigervncserver@.service
+#使用 /usr/libexec/tigervncsession-start 这个脚本
+#脚本调用 /usr/sbin/tigervncsession
 </code></pre>
 <p>需要在~&#x2F;.vnc&#x2F;下创建文件config并输入以下内容：</p>
 <pre><code>session=ubuntu
@@ -527,7 +527,7 @@ securitytypes=vncauth,tlsvnc
 <p><img src="/2023/04/12/SSH-VNC/test.png" alt="img" srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/04/12/SSH-VNC/test.png" class="lozad post-image"></p>
 <hr>
 <h3 id="参考目录："><a href="#参考目录：" class="headerlink" title="参考目录："></a>参考目录：</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://www.howtoforge.com/how-to-install-vnc-server-ubuntu-22-04/">https://www.howtoforge.com/how-to-install-vnc-server-ubuntu-22-04/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xaoyxc/p/17041180.html">https://www.cnblogs.com/xaoyxc/p/17041180.html</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.linuxbuzz.com/install-configure-vnc-ubuntu-server/">https://www.linuxbuzz.com/install-configure-vnc-ubuntu-server/</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/milton/p/16730512.html">https://www.cnblogs.com/milton/p/16730512.html</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liyuanhong/articles/15487147.html">https://www.cnblogs.com/liyuanhong/articles/15487147.html</a></li>
@@ -542,13 +542,13 @@ securitytypes=vncauth,tlsvnc
   
     <div class="nav-item-prev">
       <a 
-        href="/2023/04/13/Ubuntu-netplan/" 
+        href="/2023/04/14/WSL-desktop/" 
         class="nav-link">
         <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
           <div class="nav-label">上一篇</div>
           
-            <div class="nav-title">无线网络配置(Linux) </div>
+            <div class="nav-title">WIN下的Linux子系统配置 </div>
           
         </div>
       </a>
